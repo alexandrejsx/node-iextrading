@@ -1,0 +1,22 @@
+{
+  "name": "nodeiextrading",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"start": "firebase serve --only functions,hosting",
+		"deploy": "firebase deploy --only functions,hosting"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandrejsx/node-iextrading.git"
+  },
+  "author": "Alexandre Queiroz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandrejsx/node-iextrading/issues"
+  },
+  "homepage": "https://github.com/alexandrejsx/node-iextrading#readme",
+  "dependencies": {}
+}

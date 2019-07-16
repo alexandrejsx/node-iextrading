@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "node-iextrading-5e2d2",
+    "node-iextrading": "node-iextrading-5e2d2"
+  }
+}
