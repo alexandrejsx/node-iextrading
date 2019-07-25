@@ -3,13 +3,19 @@ const Users = require("../models/users");
 
 const router = express.Router();
 
-router.get("/getLatestPrice", async (req, res) => {
+router.post("/getDataBySymbol", async (req, res) => {
   try {
-    //const { symbol } = req.body;
+    const { symbol } = req.body;
 
-    const latestPrice = await Users.getLatestPrice();
+    const latestPrice = await Users.getLatestPrice(symbol);
 
-    return res.send(latestPrice);
+    const companyInfo = await Users.getCompanyInfo(symbol);
+
+    const companyLogo = await Users.getCompanyLogo(symbol);
+
+    const responseData = { companyInfo, latestPrice, companyLogo };
+
+    return res.send(responseData);
   } catch (error) {
     return res.status(500).send({ error: error });
   }

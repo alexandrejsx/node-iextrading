@@ -1,10 +1,8 @@
-const axios = require("axios");
+const { getFromIex } = require("./iex");
 
-//const { database } = require("../database");
-
-exports.getLatestPrice = async () => {
+exports.getLatestPrice = async symbol => {
   try {
-    const { data } = await axios.get("https://api.iextrading.com/1.0/tops?symbols=SNAP");
+    const { data } = await getFromIex(`/stock/${symbol}/quote`);
 
     return {
       data: data,
@@ -16,6 +14,42 @@ exports.getLatestPrice = async () => {
       data: error,
       success: false,
       message: "Erro ao encontrar últimas ações!"
+    };
+  }
+};
+
+exports.getCompanyInfo = async symbol => {
+  try {
+    const { data } = await getFromIex(`/stock/${symbol}/company`);
+
+    return {
+      data: data,
+      success: true,
+      message: "Empresa encontrada com sucesso!"
+    };
+  } catch (error) {
+    return {
+      data: error,
+      success: false,
+      message: "Erro ao encontrar empresa!"
+    };
+  }
+};
+
+exports.getCompanyLogo = async symbol => {
+  try {
+    const { data } = await getFromIex(`/stock/${symbol}/logo`);
+
+    return {
+      data: data,
+      success: true,
+      message: "Logo encontrada com sucesso!"
+    };
+  } catch (error) {
+    return {
+      data: error,
+      success: false,
+      message: "Erro ao encontrar logo!"
     };
   }
 };

@@ -1,8 +1,11 @@
-const functions = require('firebase-functions');
-const express = require('express');
-const bodyParser = require('body-parser');
+const functions = require("firebase-functions");
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors({ origin: true }));
 
 app.use(bodyParser.json()); //recebendo json
 
