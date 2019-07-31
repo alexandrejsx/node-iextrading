@@ -45,4 +45,4 @@ router.post("/getTodayEarnings", async (req, res) => {
   }
 });
 
-module.exports = app => app.use("/general", router); //recuperando app do index e definindo middleware general
+module.exports = app => app.use("/general", router);

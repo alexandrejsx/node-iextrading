@@ -6,8 +6,8 @@ exports.getFromIex = async (endpoint, testData = false) => {
     : "https://cloud.iexapis.com/";
 
   const key = testData
-    ? "Tpk_34cf6607f9ac4260bb999c7748d03e68"
-    : "pk_e8621e68ada14cfea8310111f1ee6774";
+    ? "Tpk_58aaac8646404b2da5bcea7b378c52d8"
+    : "pk_fec3452268284b8a901665f7d6b605bb";
 
   return await axios.get(`${base_url}/stable${endpoint}?token=${key}`);
 };
