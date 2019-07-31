@@ -7,11 +7,11 @@ const app = express();
 
 app.use(cors({ origin: true }));
 
-app.use(bodyParser.json()); //recebendo json
+app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({ extended: false })); //decodando url
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //Importando rotas
-require("../functions/routes/users")(app); //passando app como parâmetro
+require("../functions/routes/general")(app);
 
 exports.app = functions.https.onRequest(app);
