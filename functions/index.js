@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Importando rotas
-require("../functions/routes/general")(app);
+require("./routes/general")(app);
 
 exports.app = functions.https.onRequest(app);

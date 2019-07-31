@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"start": "firebase serve --only functions,hosting",
-		"deploy": "firebase deploy --only functions,hosting"
+    "start": "firebase serve --only functions,hosting",
+    "deploy": "firebase deploy --only functions,hosting"
   },
   "repository": {
     "type": "git",
