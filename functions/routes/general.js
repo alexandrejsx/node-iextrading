@@ -32,7 +32,7 @@ router.post("/getDataBySymbol", async (req, res) => {
   }
 });
 
-router.get("/getTodayEarnings", async (req, res) => {
+router.post("/getTodayEarnings", async (req, res) => {
   try {
     const todayEarnings = await General.getTodayEarnings();
 
