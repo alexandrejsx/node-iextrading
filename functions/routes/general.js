@@ -1,5 +1,6 @@
 const express = require("express");
 const General = require("../models/general");
+const cors = require("cors");
 
 const router = express.Router();
 
@@ -44,5 +45,7 @@ router.post("/getTodayEarnings", async (req, res) => {
     return res.status(500).send({ error: error });
   }
 });
+
+router.use(cors({ origin: true }));
 
 module.exports = app => app.use("/general", router);
