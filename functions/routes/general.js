@@ -1,6 +1,5 @@
 const express = require("express");
 const General = require("../models/general");
-const cors = require("cors");
 
 const router = express.Router();
 
