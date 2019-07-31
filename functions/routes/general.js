@@ -32,7 +32,7 @@ router.post("/getDataBySymbol", async (req, res) => {
   }
 });
 
-router.post("/getTodayEarnings", async (req, res) => {
+router.get("/getTodayEarnings", async (req, res) => {
   try {
     const todayEarnings = await General.getTodayEarnings();
 
@@ -45,7 +45,5 @@ router.post("/getTodayEarnings", async (req, res) => {
     return res.status(500).send({ error: error });
   }
 });
-
-router.use(cors({ origin: true }));
 
 module.exports = app => app.use("/general", router);
