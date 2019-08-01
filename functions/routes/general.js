@@ -1,6 +1,6 @@
 const express = require("express");
 const General = require("../models/general");
-
+const response = require('../util/response');
 const router = express.Router();
 
 router.post("/getDataBySymbol", async (req, res) => {
@@ -25,9 +25,9 @@ router.post("/getDataBySymbol", async (req, res) => {
       chartDataMonth
     };
 
-    return res.send(responseData);
+    return response.transformResponse(req, res, responseData);
   } catch (error) {
-    return res.status(500).send({ error: error });
+    return response.transformError(req, res, error);
   }
 });
 
@@ -39,9 +39,9 @@ router.post("/getTodayEarnings", async (req, res) => {
       todayEarnings
     };
 
-    return res.send(responseData);
+    return response.transformResponse(req, res, responseData);
   } catch (error) {
-    return res.status(500).send({ error: error });
+    return response.transformError(req, res, error);
   }
 });
 

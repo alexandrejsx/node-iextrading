@@ -1,6 +1,8 @@
 {
   "projects": {
     "default": "node-iextrading-5e2d2",
-    "node-iextrading": "node-iextrading-5e2d2"
+    "node-iextrading": "node-iextrading-5e2d2",
+    "node-iex": "node-iextrading-5e2d2",
+    "node-trading": "node-iextrading-5e2d2"
   }
 }
